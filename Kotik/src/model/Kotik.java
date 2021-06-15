@@ -55,6 +55,7 @@ public class Kotik {
 
 	public Kotik() {
 		name = "Unknown cat";
+		meow = "KFRFKRFKSKSD!!!";
 		objectCount++;
 	}
 
@@ -62,7 +63,7 @@ public class Kotik {
 
 	public void liveAnotherDay() {
 		for (int i = 0; i < 24; i++) {
-			int random = (int) (Math.random() * 4 + 1);
+			int random = (int) (Math.random() * 5 + 1);
 
 			switch (random) {
 			case 1:
@@ -79,6 +80,10 @@ public class Kotik {
 
 			case 4:
 				claws();
+				break;
+				
+			case 5:
+				sayMeow();
 				break;
 
 			default:
@@ -152,4 +157,15 @@ public class Kotik {
 		}
 	}
 
+	public boolean sayMeow() {
+		if (hunger < 1) {
+			System.out.println(name + " is say: I am hungry! I cant do anythink!");
+			eat();
+			return false;
+		} else {
+			System.out.println(name + " say: " + meow);
+			hunger -= 10;
+			return true;
+		}
+	}
 }
