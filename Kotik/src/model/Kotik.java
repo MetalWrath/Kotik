@@ -168,4 +168,14 @@ public class Kotik {
 			return true;
 		}
 	}
+  
+	public boolean compareVoice(Kotik cat) {
+		if(meow.equalsIgnoreCase(cat.meow)) {
+			return true;
+		}else {
+			return false;
+		}
+		
+		
+	}
 }
