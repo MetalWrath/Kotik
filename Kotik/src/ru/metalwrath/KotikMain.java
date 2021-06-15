@@ -3,8 +3,10 @@ package ru.metalwrath;
 public class KotikMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		Kotik cat1 = new Kotik(7, "Barsik", 15, "MYAAAAAAAW");
+		cat1.liveAnotherDay();
+		
 	}
 
 }
