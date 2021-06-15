@@ -1,6 +1,8 @@
-package ru.metalwrath;
+package model;
 
 public class Kotik {
+	public static int objectCount = 0;
+	
 	private int hunger = 50;
 	private int prettiness;
 	private String name;
@@ -48,9 +50,12 @@ public class Kotik {
 		this.name = name;
 		this.weight = weight;
 		this.meow = meow;
+		objectCount++;
 	}
 
 	public Kotik() {
+		name = "Unknown cat";
+		objectCount++;
 	}
 
 	// METHODS
@@ -84,36 +89,42 @@ public class Kotik {
 		}
 	}
 
-	public void eat() {
+	public boolean eat() {
 		hunger += 15;
 		System.out.println(name + " OM-NOM-NOM!");
+		return true;
 	}
 
-	public void play() {
+	public boolean play() {
 		if (hunger < 1) {
 			System.out.println(name + " is say: I am hungry! I cant do anythink!");
 			eat();
+			return false;
 		} else {
 			System.out.println(name + " is playing!");
 			hunger -= 10;
+			return true;
 		}
 
 	}
 
-	public void sleep() {
+	public boolean sleep() {
 		if (hunger < 1) {
 			System.out.println(name + " is say: I am hungry! I cant do anythink!");
 			eat();
+			return false;
 		} else {
 			System.out.println(name + " is sleeping!");
 			hunger -= 10;
+			return true;
 		}
 	}
 
-	public void chaseMouse() {
+	public boolean chaseMouse() {
 		if (hunger < 1) {
 			System.out.println(name + " is say: I am hungry! I cant do anythink!");
 			eat();
+			return false;
 		} else {
 			System.out.println(name + " is hunting!");
 			int huntRandom = (int) (Math.random() * 10);
@@ -124,17 +135,20 @@ public class Kotik {
 				System.out.println("Hunt is failed. " + name + " is are luser! ");
 				hunger -= 10;
 			}
+			return true;
 
 		}
 	}
 
-	public void claws() {
+	public boolean claws() {
 		if (hunger < 1) {
 			System.out.println(name + " is say: I am hungry! I cant do anythink!");
 			eat();
+			return false;
 		} else {
 			System.out.println(name + " is harpens claws on wallpaper! Pidor pushistiy.");
 			hunger -= 10;
+			return true;
 		}
 	}
 
